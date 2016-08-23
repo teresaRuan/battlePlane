@@ -1,0 +1,147 @@
+﻿*{margin: 0;padding: 0;}
+body,html{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+#container,#content{
+    position: relative;
+    display:none;
+    text-align: center;
+    width:100vw;
+    height: 100vh;
+    opacity:0;
+    transition: all ease-in-out 2s;
+    overflow: hidden;}
+#container.active{
+    opacity: 1;
+}
+.bullet{
+  position: absolute;
+  width: 6px;
+  height:14px;
+  background: url(../img/bullet.png);
+}
+.banglane{
+	position:absolute;
+	background:url(../img/player.gif) 0 0/cover;
+	width: 240px;
+	height:175px; }
+.npc1{
+  position: absolute;
+  width: 34px;
+  height: 45px;
+  background:url(../img/npc1.png) 0 0/cover;}
+.npc2{
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  background:url(../img/npc2.png) 0 0/cover; }
+.npc3{
+  position: absolute;
+  width: 240px;
+  height: 175px;
+  background:url(../img/npc3.png) 0 0/cover; }
+.bang1{
+  position: absolute;
+  width: 34px;
+  height: 45px;
+  background:url(../img/npc1.gif) 0 0/cover; }
+.bang2{
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  background:url(../img/npc2.gif) 0 0/cover;  }
+.bang3{
+  position: absolute;
+  width: 240px;
+  height: 175px;
+  background:url(../img/npc2.gif) 0 0/cover;  }
+
+#score,
+#highest{
+    position: absolute;
+    left:0;
+    top: 0;
+    padding: 0 10px;
+    background: #162a4a;
+    color: #fff;
+    z-index: 999;}
+#highest{top: 40px;}
+.btn{
+    position: absolute;
+    top:30%;
+    left:40%;
+    color: #fff;
+    background: none;
+    font-size: 18px;
+    border:1px solid #333;
+    border-radius: 15px;
+    padding: 6px 30px;
+    cursor: pointer;
+    outline: none;}
+#pause_btn,
+#again_btn{
+  display: none;
+}
+canvas{
+    position: fixed;
+    left: 0;
+    top:0;
+    transition: all ease-in-out 2s;
+    z-index: -1;
+}
+.bgm{
+    opacity: 0;
+}
+#endScroe{
+    line-height: 400%;
+    font-weight: bold;
+}
+.myPlane{
+    width: 120px;
+    height: 120px;
+    background:url(../img/player.png) 0 0/cover;
+    position: absolute;
+    z-index: 10;
+    left: 45%;
+    bottom:5%;
+    animation: start linear .5s;
+}
+#load{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+}
+#load span{
+    position:relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin:200px auto 100px;
+    background-color:#345B9A;
+    animation: loa linear infinite 2s;
+    box-shadow: 0 0 10px rgba(255,255,255,.5);
+}
+#load h1{
+    position: relative;
+    letter-spacing: 10px;
+    text-align: center;
+}
+@-webkit-keyframes loa {
+    0% { -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);}
+    50% { -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(0deg) }
+    100% { -webkit-transform: perspective(120px) rotateX(-180deg)  rotateY(180deg) }
+}
+@-webkit-keyframes start {
+0%{
+    bottom: -30%;
+}
+    100%{
+        bottom:5%;
+    }
+}

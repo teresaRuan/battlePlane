@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>battleplane</title>
+	<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+	<link rel="stylesheet" href="css/style.css" />
+<script>
+		var lo=setInterval(yujiazai,1000);
+		var imgSrc=['img/player.png','img/npc1.png','img/npc2.png','img/npc3.png'];
+		var obImg=false;
+		function yujiazai(){
+			//try{
+			if(loading){
+                   var img=new Image();
+				   img.src=imgSrc[0];
+
+				var s=img.width;
+				   if(s!=0) {
+					   imgSrc.shift();
+					   if (imgSrc.length <= 0) {
+						   obImg=true;
+					   }
+				   }
+				if (obImg){
+					init();
+					clearInterval(lo);
+					return;
+				}
+			}
+		//}catch(err){}
+		}
+		function  init(){
+			document.getElementById('load').style.display='none';
+			document.getElementById('container').style.display='block';
+			document.getElementById('container').className+='active';
+			gameMusic.bgm.play();
+		}
+
+	</script>
+</head>
+<body>
+<div id="load">
+	<span class="load-animate"></span>
+	<h1>LOADING</h1>
+</div>
+	<div id="container">
+		<span id="begin_btn" class="btn">开始游戏</span>
+		<span id="pause_btn" class="btn">继续游戏</span>
+		<span id="again_btn" class="btn">重新开始</span>
+		<div id="score"></div>
+		<div id="highest"></div>
+	</div>
+<div class="bgm">
+	<audio src="music/Bounce.mp3" id="bgm" loop="loop" controls></audio>
+	<audio src="music/explosion5.mp3" id="boun" controls></audio>
+</div>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/CanvasRenderer.js"></script>
+<script src="js/Bullet.js"></script>
+<script src="js/Plane.js"></script>
+<script src="js/main.js"></script>
+<!--<script src="dist/js/bundle.js"></script>-->
+</body>
+</html>
