@@ -1,6 +1,6 @@
 # BattlePlane
 
-demo地址：[https://github.com/](https://github.com/).
+**demo地址**：[battleplane](https://github.com/teresaRuan/battleplane).
 
 ## 注意事项
 
