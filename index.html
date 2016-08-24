@@ -10,7 +10,7 @@
 		var imgSrc=['img/player.png','img/npc1.png','img/npc2.png','img/npc3.png'];
 		var obImg=false;
 		function yujiazai(){
-			//try{
+			try{
 			if(loading){
                    var img=new Image();
 				   img.src=imgSrc[0];
@@ -28,7 +28,7 @@
 					return;
 				}
 			}
-		//}catch(err){}
+		}catch(err){}
 		}
 		function  init(){
 			document.getElementById('load').style.display='none';
