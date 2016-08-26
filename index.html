@@ -12,7 +12,7 @@
 		function yujiazai(){
 			try{
 			if(loading){
-                   var img=new Image();
+          var img=new Image();
 				   img.src=imgSrc[0];
 
 				var s=img.width;
@@ -27,6 +27,8 @@
 					clearInterval(lo);
 					return;
 				}
+			}else{
+				throw new Error('waiting')
 			}
 		}catch(err){}
 		}
